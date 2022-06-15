@@ -38,7 +38,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 
     $result = $query->fetch(PDO::FETCH_ASSOC);
 }
-
+  
 
 
 ?>

@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
     echo $html;
 }
-
+  
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Assainissement des données
     $email = strip_tags(trim($_POST['email']));

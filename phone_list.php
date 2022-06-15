@@ -2,7 +2,7 @@
 require_once('connect.php');
 $contactId = $_GET['id'] ?? null;
 
-
+  
  if ($contactId != null) :
 $query = $db->query('SELECT * from telephone  where contact_id_contact=' . $contactId);
 

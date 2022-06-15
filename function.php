@@ -9,3 +9,4 @@ function validateEmail($email)
     exit;
   }
 }
+  

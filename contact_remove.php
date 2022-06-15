@@ -21,4 +21,4 @@ if ($query->rowCount() === 0) {
     exit('Enregistrement inconnu !!!');
 }
 
-header('location: contact_list.php');
+header('location: contact_list.php');  

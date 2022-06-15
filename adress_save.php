@@ -1,4 +1,4 @@
-<?php
+<?php  
 require_once('connect.php');
 $idContact = $_GET['id_contact'] ?? null;
 

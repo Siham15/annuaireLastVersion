@@ -1,7 +1,7 @@
 <?php
 require_once('connect.php');
 
-
+ 
 if(isset($_POST)){
     if (isset($_POST['id_telephone']) && !empty($_POST['id_telephone'])){
         $idTelephone = strip_tags($_POST['id_telephone']);

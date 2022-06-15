@@ -20,4 +20,4 @@ if ($query == false) {
     exit;
 }
 
-header('location: read_contact.php?id='.$contactId);
+header('location: read_contact.php?id='.$contactId); 

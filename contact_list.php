@@ -31,4 +31,4 @@ $contacts = $query->fetchAll(PDO::FETCH_ASSOC);
     </tr>
 <?php endforeach; ?>
 
-</table>
+</table>  

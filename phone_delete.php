@@ -2,7 +2,7 @@
 require_once('connect.php');
 
 
-
+  
 if(isset($_GET)){
     if (isset($_GET['id_telephone']) && !empty($_GET['id_telephone'])){
         $idTelephone = strip_tags($_GET['id_telephone']);
