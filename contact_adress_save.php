@@ -1,13 +1,7 @@
 <?php
 
 require_once('connect.php');
-/*Array
-(
-    [numero] => 15
-    [rue] => gaga
-    [code_postal] => 7780
-    [ville] => clolk
-)*/
+
 $idContact = $_GET['id_contact'];
 
 
@@ -18,9 +12,8 @@ if(isset($_POST) && !empty($_POST)){
     $ville = $_POST['ville'] ?? null;
     
 }
-
-//var_dump($ville);exit;
-
+ header('location: contact_list.php'); 
+ 
 $rq = $db->prepare('insert into adresse (rue, numero, code_postal, ville, id_contact) values (:rue,:numero,:code_postal,:ville, :id_contact)');
 $rq->bindparam(':rue',$rue);
 $rq->bindparam(':numero',$numero);
@@ -31,10 +24,7 @@ $rq->bindparam(':id_contact',$idContact);
 
 $rq->execute();
 
-var_dump($rq); exit;
-
-
-header('location :read_contact.php');
+header('location :contact_list.php');
 
 
 

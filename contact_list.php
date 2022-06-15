@@ -14,12 +14,14 @@ $contacts = $query->fetchAll(PDO::FETCH_ASSOC);
         <th>#</th>
         <th>Nom</th>
         <th>Prenom</th>
+        <th>E-mail</th>
     </tr>
 <?php foreach($contacts as $contact): ?>
     <tr>
         <td><?= $contact['id'] ?></td>
         <td><?= $contact['nom'] ?></td>
         <td><?= $contact['prenom'] ?></td>
+        <td><?= $contact['mail'] ?></td>
         <td>
             <a onclick="return confirm('Voulez-vous vraiment supprimer cet élement ?')" 
             href="contact_remove.php?id=<?= $contact['id'] ?>" class="btn btn-danger">SUPPRIMER</a>

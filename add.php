@@ -42,7 +42,10 @@ if ($id != null) {
             <label for="prenom" class="form-label">Prénom</label>
             <input type="text" class="form-control" value="<?= $contact['prenom'] ?? '' ?>" id="prenom" name="prenom">
           </div>
-
+          <div class="mb-3">
+            <label for="mail" class="form-label">E-mail</label>
+            <input type="text" class="form-control" value="<?= $contact['mail'] ?? '' ?>" id="mail" name="mail">
+          </div>
 
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>

@@ -36,10 +36,10 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
     // On stocke le résultat dans un tableau associatif
     $contact = $query->fetch();
     if(!$contact){
-        header('Location: index.php');
+        header('Location: contact_list.php');
     }
 }else{
-    header('Location: index.php');
+    header('Location: contact_list.php');
 }
 
 ?>
@@ -56,11 +56,12 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 </head>
 <body>
 
-<a href="index.php" class="btn btn-primary">Accueil</a>
+<a href="contact_list.php" class="btn btn-primary">Accueil</a>
     <h1>Détails du contact</h1>
     <p>ID : <?= $contact['id'] ?></p>
     <p>Nom : <?= $contact['nom'] ?></p>
     <p>Prénom : <?= $contact['prenom'] ?></p>
+   <p>Email : <?= $contact['mail'] ?></p>
     <p><a href="contact_edit.php?id=<?= $contact['id'] ?>">Modifier</a>  <a href="contact_remove.php?id=<?= $contact['id'] ?>">Supprimer</a></p>
     <?php include('phone_list.php'); ?>
     <?php include('adress_list.php'); ?>

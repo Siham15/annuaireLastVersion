@@ -1,8 +1,7 @@
 <?php
 require_once('connect.php');
 $idContact = $_GET['id'] ?? null;
- if ($idContact
- != null) :
+ if ($idContact != null) :
 $query = $db->query('SELECT * from adresse  where id_contact=' . $idContact);
 
 $adresses = $query->fetchAll(PDO::FETCH_ASSOC); 
@@ -18,7 +17,8 @@ $adresses = $query->fetchAll(PDO::FETCH_ASSOC);
         <?php foreach($adresses as $a): ?>
             <li class="list-group-item ">
                 <div class="ms-2 me-auto">
-                <?= $a['rue'] ?>  <?= $a['numero'] ?> <?= $a['code_postal'] ?> <?= $a['ville'] ?><br>
+                <?= $a['rue'] ?>  <?= $a['numero'] ?> <?= $a['code_postal'] ?> <?= $a['ville'] ?><br> <a href="adress_update.php?id_adresse=<?= $a['id_adresse'] ?>" class="btn btn-success btn-sm mt-3 mb-3">Modifier</a>
+    <a href="adress_delete.php?id_adresse=<?= $a['id_adresse'] ?>" class="btn btn-success btn-sm mt-3 mb-3">Supprimer</a>
                 </div>
             </li>
         <?php endforeach; ?>

@@ -1,5 +1,4 @@
 <?php
-
 require_once('connect.php');
 
 $contactId = $_GET['contact_id_contact'];

@@ -1,8 +1,7 @@
 <?php
-
 require_once('connect.php');
 $contactId = $_GET['contact_id_contact'] ?? null;
-
+$idTelephone = $_POST['id_telephone'] ?? null;
 
 if ($contactId == null) {
     header('location: contact_list.php');

@@ -7,15 +7,17 @@ if(isset($_POST)){
         $id = strip_tags($_GET['id']);
         $nom = strip_tags($_POST['nom']);
         $prenom = strip_tags($_POST['prenom']);
+        $mail = strip_tags($_POST['mail']);
        
 
-        $sql = "UPDATE `contact` SET `nom`=:nom, `prenom`=:prenom WHERE `id`=:id;";
+        $sql = "UPDATE `contact` SET `nom`=:nom, `prenom`=:prenom, mail = :mail WHERE `id`=:id;";
 
         $query = $db->prepare($sql);
 
         $query->bindValue(':id', $id, PDO::PARAM_INT);
         $query->bindValue(':nom', $nom, PDO::PARAM_STR);
         $query->bindValue(':prenom', $prenom, PDO::PARAM_STR);
+        $query->bindValue(':mail', $mail, PDO::PARAM_STR);
        
 
         $query->execute();
@@ -61,8 +63,11 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
             <label for="nom"> Nom </label>
             <input type="text" name="nom" id="nom" value="<?=$result['nom'] ?>">
         </p>
-        <p> <label for="preno"> Prénom </label>
+        <p> <label for="prenom"> Prénom </label>
             <input for="text" name="prenom" id="prenom" value="<?=$result['prenom'] ?>">
+        </p>
+        <p> <label for="mail"> E-mail </label>
+            <input for="text" name="mail" id="mail" value="<?=$result['mail'] ?>">
         </p>
         <p>
             <button>Enregistrer</button>
